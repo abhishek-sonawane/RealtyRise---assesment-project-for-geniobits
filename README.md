@@ -3,7 +3,8 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](chrome_cFQzshzzoN.png)
+
 
 This project is an assesment project for GENIOBITS. \
 RealtyRise is a real estate web Application to find property listings.  

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
 import { createUserWithEmailAndPassword,updateProfile } from 'firebase/auth'
 import { db , auth } from '../firebase.config'
 import { doc,setDoc,getDoc,serverTimestamp } from 'firebase/firestore'
@@ -85,6 +85,7 @@ data-mdb-ripple-color="light"
 >
 Register
 </button>
+  <p className='text-xl p-4' >already have an account? <Link className='underline' to='/sign-in' >Sign in</Link></p>
      </form>
     
 

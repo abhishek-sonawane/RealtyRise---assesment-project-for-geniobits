@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { auth } from '../firebase.config'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import {toast} from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
 
 
 function Signin() {
@@ -78,6 +78,7 @@ function Signin() {
                     >
                     Sign in
                     </button>
+                    <p className='text-xl p-4' >Dont have an account? <Link className='underline' to='/register' >Register</Link></p>
 
     </form>
              
