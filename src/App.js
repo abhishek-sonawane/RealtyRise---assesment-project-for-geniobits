@@ -7,18 +7,24 @@ import DashboardProfile from './pages/DashboardProfile';
 import ProtectedRoute from './pages/ProtectedRoute';
 import Signup from './pages/Signup';
 import ExplorePage from './pages/ExplorePage';
+import SingleListing from './pages/SingleListing';
+import Footer from './components/Footer';
+import Messages from './pages/Messages';
 
 function App() {
   return (
    <BrowserRouter >
    <Routes>
-    <Route path='/' element= {<ProtectedRoute/>}>
-      <Route path='/' element={<ExplorePage />} />
+    <Route path='/profile' element= {<ProtectedRoute/>}>
+      <Route path='/profile' element={<DashboardProfile />} />
     </Route>
     <Route path='/sign-in' element={<Signin/>} />
     <Route path='/register' element={<Signup/>}/>
-
+    <Route path='/' element={<ExplorePage />} />
+    <Route path='/messages' element={<Messages/>} />
+    <Route path='/explore/:listingId' element={<SingleListing/>} />
    </Routes>
+   <Footer />
    <ToastContainer />
    </BrowserRouter>
   );
