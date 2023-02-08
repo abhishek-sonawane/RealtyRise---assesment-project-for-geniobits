@@ -3,13 +3,19 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](chrome_cFQzshzzoN.png)
-
-
 This project is an assesment project for GENIOBITS. \
 RealtyRise is a real estate web Application to find property listings.  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+## Demo
+
+
+
+https://user-images.githubusercontent.com/91133296/217586089-ff35144c-a6da-4a49-b3ef-8dc8d7d37afc.mp4
+
 
 
 
@@ -83,9 +89,6 @@ export const db = getFirestore()
 
 
 <!-- USAGE EXAMPLES -->
-## Demo
-
-video demo
 
 ## Features
 * User sign in, signup and logout with proper authentication
@@ -127,7 +130,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Abhishek Sonawane - [@realbrownsaiyan](https://twitter.com/realbrownsaiyan) - abhisheksonwane57@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/abhishek-sonawane/RealtyRise-assesment-project-for-geniobits](https://github.com/abhishek-sonawane/RealtyRise-assesment-project-for-geniobits)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
