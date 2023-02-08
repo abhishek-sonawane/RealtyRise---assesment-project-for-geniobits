@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import GlobalContext from '../context/GlobalContext'
 
-function Listings({filteredList,savetoFeed,removefromFeed,navigateToListing}) {
+function Listings({filteredList,navigateToListing}) {
+    const {savetoFeed,removefromFeed} = useContext(GlobalContext)
   return (
     <div>
           <div className='flex flex-col justify-center gap-8 p-8 bg-base-200 '>

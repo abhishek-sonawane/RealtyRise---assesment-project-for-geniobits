@@ -16,7 +16,7 @@ function ExplorePage() {
     // const [listings,setListings] = useState([])
     const [search,setSearch] = useState('')
 
-    const {listings,getListing,savetoFeed,removefromFeed} = useContext(GlobalContext)
+    const {listings,getListing} = useContext(GlobalContext)
 
    const filteredList =  listings.filter((item)=> 
     item.data.name.toLowerCase().includes(search)||
@@ -58,7 +58,7 @@ function ExplorePage() {
     
             {/* show property listing here */}
             
-          <Listings filteredList={filteredList} navigateToListing={navigateToListing} savetoFeed={savetoFeed} removefromFeed={removefromFeed} />
+          <Listings filteredList={filteredList} navigateToListing={navigateToListing} />
     
             {/* footer */}
             <Footer />

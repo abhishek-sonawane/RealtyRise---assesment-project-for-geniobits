@@ -19,21 +19,14 @@ function DashboardProfile() {
   }
   useEffect(()=>{
     getSaved()
-  },[savedFeed])
+
+    console.log('he')
+  },[])
 
 
 
  return(
     <div>
-      {/* details about user */}
-    {/* <h3>welcome, {auth.currentUser.displayName}</h3>
-    <h4>{auth.currentUser.email}</h4> */}
-
-
-      {/* list of saved listings */}
-
-     
-
 
 <div className="hero min-h-screen w-3/4 mx-auto bg-base-200">
   <div className="hero-content flex-col lg:flex-col">

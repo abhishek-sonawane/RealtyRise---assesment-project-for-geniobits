@@ -6,7 +6,6 @@
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 This project is an assesment project for GENIOBITS. \
-
 RealtyRise is a real estate web Application to find property listings.  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

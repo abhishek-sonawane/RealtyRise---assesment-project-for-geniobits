@@ -17,10 +17,10 @@ export const ContextProvider =({children})=>{
         try {
           const docRef = doc(db, "users", auth.currentUser.uid);
          const querySnapShot = await getDoc(docRef)
-         console.log(querySnapShot.data())
+        //  console.log(querySnapShot.data())
          setSavedfeed(querySnapShot.data().savedListing)
       } catch (error) {
-          console.log(error)
+        //   console.log(error)
           toast.error('something went wrong')
       }
       }
@@ -33,7 +33,7 @@ export const ContextProvider =({children})=>{
            const querySnapShot = await getDocs(collection(db,'listings'))
            const list =[]
            querySnapShot.forEach(item=>{
-            console.log(item.data())
+            // console.log(item.data())
             list.push({
                 id:item.id,
                 data:item.data()
@@ -41,7 +41,7 @@ export const ContextProvider =({children})=>{
            })
            setListings(list)
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             toast.error('something went wrong')
         }
     }

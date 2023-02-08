@@ -38,18 +38,6 @@ function SingleListing() {
   </div>
     
 
-  {/* <div>
-            <h2>{listing.name}</h2>
-            <h4>{listing.location}</h4>
-            
-            <a href={mailtoRef}>contact seller</a>
-    
-        </div> */}
-
-
-
-
-
 </div>
        
       )
