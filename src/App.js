@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Signin from './pages/Signin';
 import DashboardProfile from './pages/DashboardProfile';
 import ProtectedRoute from './pages/ProtectedRoute';
+import { ContextProvider } from './context/GlobalContext';
 import Signup from './pages/Signup';
 import ExplorePage from './pages/ExplorePage';
 import SingleListing from './pages/SingleListing';
@@ -13,7 +14,8 @@ import Messages from './pages/Messages';
 
 function App() {
   return (
-   <BrowserRouter >
+  <ContextProvider>
+     <BrowserRouter >
    <Routes>
     <Route path='/profile' element= {<ProtectedRoute/>}>
       <Route path='/profile' element={<DashboardProfile />} />
@@ -27,6 +29,7 @@ function App() {
    <Footer />
    <ToastContainer />
    </BrowserRouter>
+  </ContextProvider>
   );
 }
 

@@ -32,9 +32,9 @@ function Footer() {
 
 
 <div className=" w-full flex flex-row gap-0">
-  <NavLink to='/' className=" p-4  text-center text-slate-800 flex-auto text-2xl">explore</NavLink>
-  <NavLink to='/messages' className="p-4  text-center text-slate-800 flex-auto text-2xl">messages</NavLink>
-  <NavLink to='/profile' className="p-4  text-center text-slate-800 flex-auto text-2xl">profile</NavLink>
+  <NavLink to='/' className=" p-4 text-center text-slate-800 flex-auto text-xl">explore</NavLink>
+  <NavLink to='/messages' className="p-4  text-center text-slate-800 flex-auto text-xl">messages</NavLink>
+  <NavLink to='/profile' className="p-4  text-center text-slate-800 flex-auto text-xl">profile</NavLink>
 </div>
    
   </footer>
