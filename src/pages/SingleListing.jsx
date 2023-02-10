@@ -1,29 +1,36 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams,useNavigate } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 import { db,auth } from '../firebase.config'
-import { doc,getDoc } from 'firebase/firestore'
+import { doc,getDoc,updateDoc,arrayUnion } from 'firebase/firestore'
+import GlobalContext from '../context/GlobalContext'
+import { toast } from 'react-toastify'
 
 
 function SingleListing() {
     const params = useParams()
     const navigate = useNavigate()
     const [listing,setlisting] = useState(null)
-
+    const {getMessageHistoryList,savetoMsgHistory} = useContext(GlobalContext)
     useEffect(()=>{
-        const getSingleListing =async ()=>{
-            const docref = doc(db,'listings',params.listingId)
-        const querySnapshot = await getDoc(docref)
-        console.log(querySnapshot.data())
-        setlisting(querySnapshot.data())
-        }
+
+        getMessageHistoryList()
         getSingleListing()
     },[params.listingId])
-    const senderemail = 'abhisheksonwane57@gmail.com'
 
-   const mailtoRef = `mailto:${senderemail}?subject=SendMail&body=Description`
+    const getSingleListing =async ()=>{
+     try {
+      const docref = doc(db,'listings',params.listingId)
+      const querySnapshot = await getDoc(docref)
+      console.log(querySnapshot.data())
+      setlisting(querySnapshot.data())
+     } catch (error) {
+      toast.error('cant get listing :(')
+     }
+      }
 
-  if(listing){
+    if(listing){
+
     return(
         <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
@@ -32,8 +39,8 @@ function SingleListing() {
     <div>
       <h1 className="text-5xl font-bold">{listing.name}</h1>
       <h3 className='text-3xl font-semibold ' >{listing.location}</h3>
-      <p className="py-6">{listing.location}</p>
-      <button className="btn btn-primary"> <a href={mailtoRef}>contact seller</a></button>
+      <p className="py-6">{listing.regularPrice?listing.regularPrice:''}</p>
+      <button className="btn btn-primary" onClick={()=>{savetoMsgHistory(listing.owner)}}> <a href={`mailto:${listing.owner.email}?subject=SendMail&body=Description`}>contact seller</a></button>
     </div>
   </div>
     

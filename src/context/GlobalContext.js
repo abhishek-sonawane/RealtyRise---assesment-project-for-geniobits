@@ -1,7 +1,9 @@
 import { createContext } from "react";
 import { useState,useEffect } from "react";
 import { db,auth } from '../firebase.config'
+import { useParams } from "react-router-dom";
 import { doc,getDoc,getDocs,collection,arrayUnion,arrayRemove, updateDoc } from 'firebase/firestore'
+
 // import {where,limit,startAfter,orderBy,query} from 'firebase/firestore'
 
 import { toast } from 'react-toastify'
@@ -11,6 +13,9 @@ const GlobalContext = createContext("");
 export const ContextProvider =({children})=>{
     const [listings,setListings] = useState([])
     const [savedFeed,setSavedfeed] = useState([])
+    const [listing,setlisting] = useState(null)
+    const [messageHistory,setmessageHistory] = useState([])
+    const params = useParams()
 
     // get saved listings array
     const getSaved = async()=>{
@@ -55,7 +60,7 @@ export const ContextProvider =({children})=>{
             })
             toast.success('added to savedlist')
         } catch (error) {
-            
+            console.log(error)
         }
     }
     const removefromFeed=async(item)=>{
@@ -66,16 +71,41 @@ export const ContextProvider =({children})=>{
             })
             toast.success('removed from savedlist')
         } catch (error) {
-            
+            console.log(error)
         }
     }
 
-    
+    // const getSingleListing =async ()=>{
+    // const docref = doc(db,'listings',params.listingId)
+    // const querySnapshot = await getDoc(docref)
+    // console.log(querySnapshot.data())
+    // setlisting(querySnapshot.data())
+    // }
+    const getMessageHistoryList =async ()=>{
+     try {
+        const messageRef = doc(db,'users',auth.currentUser.uid)
+        const messageSnapShot = await getDoc(messageRef)
+        setmessageHistory(messageSnapShot.data().messageHistory)
+     } catch (error) {
+        console.log(error)
+     }
+    }
+
+    const savetoMsgHistory = async(item)=>{
+        try {
+          const messageRef = doc(db,'users',auth.currentUser.uid)
+          await updateDoc(messageRef,{
+            messageHistory: arrayUnion(item)
+          })
+        } catch (error) {
+           toast.error('something went wrong')
+        }
+        }
 
 
     return (
         <GlobalContext.Provider
-        value={{getSaved,savedFeed,getListing,listings,savetoFeed,removefromFeed}}
+        value={{getSaved,savedFeed,getListing,listings,savetoFeed,removefromFeed,getMessageHistoryList,listing,messageHistory,savetoMsgHistory}}
         >
             {children}
         </GlobalContext.Provider>
