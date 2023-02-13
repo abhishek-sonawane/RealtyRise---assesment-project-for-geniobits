@@ -4,7 +4,6 @@ import { db,auth } from '../firebase.config'
 import { useParams } from "react-router-dom";
 import { doc,getDoc,getDocs,collection,arrayUnion,arrayRemove, updateDoc } from 'firebase/firestore'
 
-// import {where,limit,startAfter,orderBy,query} from 'firebase/firestore'
 
 import { toast } from 'react-toastify'
 
@@ -75,12 +74,6 @@ export const ContextProvider =({children})=>{
         }
     }
 
-    // const getSingleListing =async ()=>{
-    // const docref = doc(db,'listings',params.listingId)
-    // const querySnapshot = await getDoc(docref)
-    // console.log(querySnapshot.data())
-    // setlisting(querySnapshot.data())
-    // }
     const getMessageHistoryList =async ()=>{
      try {
         const messageRef = doc(db,'users',auth.currentUser.uid)

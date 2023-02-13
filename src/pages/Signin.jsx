@@ -68,9 +68,7 @@ function Signin() {
               value={password} onChange={onFormChange} id="password"
               />
           </div>
-
-
-          
+   
           <button
                     className="btn border-transparent inline-block px-7 py-3 bg-AppYellow-100 text-slate-600 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-yellow-400 hover:shadow-lg focus:bg-yellow-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-400 active:shadow-lg transition duration-150 ease-in-out w-full"
                     data-mdb-ripple="true"
@@ -81,8 +79,7 @@ function Signin() {
                     <p className='text-xl p-4' >Dont have an account? <Link className='underline' to='/register' >Register</Link></p>
 
     </form>
-             
-
+            
     </div>
 
 </div>
