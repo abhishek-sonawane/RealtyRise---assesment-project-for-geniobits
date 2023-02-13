@@ -45,14 +45,14 @@ function Signin() {
         <h2 className=' text-2xl p-6'> sign-in</h2>
 
         <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
-          {/* <!-- Email input --> */}
 
           {/* new form */}
     <form onSubmit={loginSubmit}>
 
+          {/* <!-- Email input --> */}
           <div className="mb-6">
             <input
-              type="text"
+              type="email"
               className="input input-bordered w-full"
               placeholder="Email address"
               value={email} onChange={onFormChange} id="email"

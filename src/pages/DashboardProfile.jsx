@@ -9,7 +9,6 @@ import { signOut } from 'firebase/auth'
 
 function DashboardProfile() {
   const navigate = useNavigate()
-  // const [savedFeed,setSavedfeed] = useState([])
   const {isLoggedin,loading} = UseStateAuth()
   const {savedFeed,getSaved,removefromFeed} = useContext(GlobalContext)
 

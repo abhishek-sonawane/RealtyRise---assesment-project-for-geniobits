@@ -44,7 +44,6 @@ function ExplorePage() {
     getListing()
     }
     ,[])
-    // <p>please <Link to='/sign-in' >login</Link> to continue</p>
     if(!isLoggedin) return <RedirectToSignin />
     if(loading)return (<p>loading...</p>)
     
